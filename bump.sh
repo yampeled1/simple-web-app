@@ -1,6 +1,7 @@
 set -ex
 # SET THE FOLLOWING VARIABLES
-# docker hub username
+HOSTNAME=eu.gcr.io
+# gcloud username
 USERNAME=yampeled1
 # image name
 IMAGE=flask-app
@@ -16,7 +17,7 @@ git commit -m "version $version"
 git tag -a "$version" -m "version $version"
 git push
 git push --tags
-docker tag $USERNAME/$IMAGE:latest $USERNAME/$IMAGE:$version
+docker tag $HOSTNAME/$USERNAME/$IMAGE:latest $USERNAME/$IMAGE:$version
 # push it
-docker push $USERNAME/$IMAGE:latest
-docker push $USERNAME/$IMAGE:$version
+docker push $HOSTNAME/$USERNAME/$IMAGE:latest
+docker push $HOSTNAME/$USERNAME/$IMAGE:$version
