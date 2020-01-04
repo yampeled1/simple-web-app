@@ -10,7 +10,7 @@ docker run --rm -v "$PWD":/app treeder/bump patch
 version=`cat VERSION`
 echo "version: $version"
 # building the image
-docker build -t $USERNAME/$IMAGE:latest .
+docker build -t $HOSTNAME/$USERNAME/$IMAGE:latest .
 # tag it
 git add -A
 git commit -m "version $version"
