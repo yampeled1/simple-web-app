@@ -18,5 +18,5 @@ git tag -a "$version" -m "version $version"
 git push --tags
 docker tag $HOSTNAME/$PROJECT_ID/$IMAGE:latest $HOSTNAME/$PROJECT_ID/$IMAGE:$version
 # push it
-gcloud docker push $HOSTNAME/$PROJECT_ID/$IMAGE:latest
-gcloud docker push $HOSTNAME/$PROJECT_ID/$IMAGE:$version
+gcloud docker -- push $HOSTNAME/$PROJECT_ID/$IMAGE:latest
+gcloud docker -- push $HOSTNAME/$PROJECT_ID/$IMAGE:$version
